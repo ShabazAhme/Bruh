@@ -29,7 +29,7 @@ function setup() {
  In the setup function, game state menu is formed.
 */  
    gameState = "menu";
-   captain = createSprite(displayWidth/2,displayHeight/1.2,50,50);
+   captain = createSprite(Width/2,Height/1.2,50,50);
    captain.addImage('c',caps);
    
   if (gameState==="menu"){
@@ -39,11 +39,11 @@ function setup() {
     
     
     start = createButton("Start");
-    start.position(displayWidth/2.4,displayHeight/4);
+    start.position(Width/2.4,Height/4);
     start.size(200,50);
     
     story = createButton("Story");
-    story.position(displayWidth/2.4,displayHeight/3);
+    story.position(Width/2.4,Height/3);
     story.size(200,50);
   }
   
@@ -63,7 +63,7 @@ function setup() {
   Here the boss ship is created and made invisible
 */   
  
- enemy5=createSprite(displayWidth/2,displayHeight/2,500,500);
+ enemy5=createSprite(Width/2,Height/2,500,500);
  enemy5.addImage('e005',e5);
  e5g.add(enemy5);
  enemy5.visible=false;
@@ -105,7 +105,7 @@ function draw() {
   drawSprites();
   captain.x = mouseX;
   textSize(30);
-  text("'Press 'Q' to quit game'",displayWidth/10,displayHeight-80);
+  text("'Press 'Q' to quit game'",Width/10,Height-80);
   if (keyDown("q")){
    gameState="finish"; 
   }
@@ -113,7 +113,7 @@ function draw() {
   if (gameState==="menu"){
       textSize(150);
     fill("red");
-    text("Space Story",displayWidth/5,displayHeight/6);
+    text("Space Story",Width/5,Height/6);
       }
   
  start.mousePressed(()=>{
@@ -133,17 +133,17 @@ function draw() {
      
      textSize(40);
      fill("magenta");
-     text("The Evil Talon had kidnapped the Princess of the planet of Fogg.",displayWidth/17.5,displayHeight/15);
-     text("The King has announced that whosoever shall rescue the Princess",displayWidth/17.5,displayHeight/5);
-     text("shall receive the Princess's hand in return. The Captain of the King's",displayWidth/17.5,displayHeight-525);
-     text("army decided to fight the Evil Talon and defeat him once and for all.",displayWidth/17.5,displayHeight-425);
-     text("So the Captain went off in a journey alone to save the Princess.",displayWidth/17.5,displayHeight-330);
-     text("It took him 5 days of fighting to rescue the Princess and bring her ",displayWidth/17.5,displayHeight-225);
-     text("home safely.",displayWidth/17.5,displayHeight-125);
+     text("The Evil Talon had kidnapped the Princess of the planet of Fogg.",Width/17.5,Height/15);
+     text("The King has announced that whosoever shall rescue the Princess",Width/17.5,Height/5);
+     text("shall receive the Princess's hand in return. The Captain of the King's",Width/17.5,Height-525);
+     text("army decided to fight the Evil Talon and defeat him once and for all.",Width/17.5,Height-425);
+     text("So the Captain went off in a journey alone to save the Princess.",Width/17.5,Height-330);
+     text("It took him 5 days of fighting to rescue the Princess and bring her ",Width/17.5,Height-225);
+     text("home safely.",Width/17.5,Height-125);
     
      fill("red");
      textSize(35);
-     text("'Press Space to Start Game'",displayWidth/1.75,displayHeight-80);
+     text("'Press Space to Start Game'",Width/1.75,Height-80);
 // After you read the story you are ready for the game. You press "space"
      if(keyDown("space")){
         gameState="lev1intro";
@@ -161,8 +161,8 @@ function draw() {
    fill("red");
    text("This is your ship, Captain..Press Space to shoot",captain.x,captain.y-30);   
    
-   for(var j = 50; j < displayHeight-250;j = j +100){
-   for (var i = 200; i<displayWidth-200;i = i +100){
+   for(var j = 50; j < Height-250;j = j +100){
+   for (var i = 200; i< Width-200;i = i +100){
     enemy1 = createSprite(i,j,50,50);
     enemy1.addImage('e01',e1);
     enemy1.scale=0.75;
@@ -190,13 +190,13 @@ function draw() {
       start.hide();
     
  }
-  var rand = random(100,displayWidth-100)
+  var rand = random(100,Width-100)
 
   if(gameState==="lev1"){
     
      textSize(50);
      fill("grey");
-     text("Score:"+score,displayWidth/17.5,displayHeight/10);
+     text("Score:"+score,Width/17.5,Height/10);
 // In a -- no. of frame ccounts a new a enemy ship will be created.    
    if(frameCount%50===0) {
     enemy1=createSprite(rand,0,50,50);
@@ -226,10 +226,10 @@ function draw() {
 //  thescore will be displayed in the screen and the next level will be loaded
   if(gameState==="lev2intro"){
     textSize(100);
-    text("LEVEL 1 : Score=>"+score,displayWidth/7,displayHeight/2);
+    text("LEVEL 1 : Score=>"+score,Width/7,Height/2);
      textSize(75);
     fill("yellow")
-    text("Loading Level 2... Get ready...",displayWidth/7,displayHeight/1.5);
+    text("Loading Level 2... Get ready...",Width/7,Height/1.5);
     
  if (frameCount%750===0){
    
@@ -240,7 +240,7 @@ function draw() {
   if(gameState==="lev2"){
      textSize(50);
      fill("grey");
-     text("Score:"+score,displayWidth/17.5,displayHeight/10);
+     text("Score:"+score,Width/17.5,Height/10);
  // In a -- no. of frame ccounts a new a enemy ship will be created.   
    if(frameCount%60===0){
     enemy1=createSprite(rand,0,50,50);
@@ -285,10 +285,10 @@ function draw() {
   
   if(gameState==="lev3intro"){
     textSize(100);
-    text("LEVEL 1+2 : Score=>"+score,displayWidth/20,displayHeight/2);
+    text("LEVEL 1+2 : Score=>"+score,Width/20,Height/2);
      textSize(75);
     fill("yellow")
-    text("Loading Level 3...Get Ready...",displayWidth/7,displayHeight/1.5);
+    text("Loading Level 3...Get Ready...",Width/7,Height/1.5);
     
  if (frameCount%750===0){
    
@@ -299,7 +299,7 @@ function draw() {
   if(gameState==="lev3"){
      textSize(50);
      fill("grey");
-     text("Score:"+score,displayWidth/17.5,displayHeight/10);
+     text("Score:"+score,Width/17.5,Height/10);
   // In a -- no. of frame ccounts a new a enemy ship will be created.   
    if(frameCount%40===0){
     enemy1=createSprite(rand,0,50,50);
@@ -356,11 +356,11 @@ function draw() {
    
   if(gameState==="lev4intro"){
     textSize(100);
-    text("LEVEL 1+2+3 :",displayWidth/20,displayHeight/3);
-    text("Score=>"+score,displayWidth/15,displayHeight/1.75);
+    text("LEVEL 1+2+3 :",Width/20,Height/3);
+    text("Score=>"+score,Width/15,Height/1.75);
      textSize(75);
     fill("yellow")
-    text("Loading Level 4...Get Ready...",displayWidth/7,displayHeight/1.5);
+    text("Loading Level 4...Get Ready...",Width/7,Height/1.5);
     
  if (frameCount%750===0){
    
@@ -371,7 +371,7 @@ function draw() {
   if(gameState==="lev4"){
     textSize(50);
      fill("grey");
-     text("Score:"+score,displayWidth/17.5,displayHeight/10);
+     text("Score:"+score,Width/17.5,Height/10);
    // In a -- no. of frame ccounts a new a enemy ship will be created.    
    if(frameCount%40===0){
     enemy1=createSprite(rand,0,50,50);
@@ -440,11 +440,11 @@ function draw() {
   
   if(gameState==="lev5intro"){
     textSize(100);
-    text("LEVEL 1+2+3+4 :",displayWidth/20,displayHeight/3);
-    text("Score=>"+score,displayWidth/15,displayHeight/1.75);
+    text("LEVEL 1+2+3+4 :",Width/20,Height/3);
+    text("Score=>"+score,Width/15,Height/1.75);
      textSize(75);
     fill("yellow")
-    text("Loading Level 5...Get Ready...",displayWidth/7,displayHeight/1.5);
+    text("Loading Level 5...Get Ready...",Width/7,Height/1.5);
     
  if (frameCount%750===0){
    
@@ -455,7 +455,7 @@ function draw() {
   if(gameState==="lev5"){
      textSize(50);
      fill("grey");
-     text("Score:"+score,displayWidth/17.5,displayHeight/10);
+     text("Score:"+score,Width/17.5,Height/10);
     
   // In a -- no. of frame ccounts a new a enemy ship will be created.   
    if(frameCount%40===0){
@@ -553,17 +553,17 @@ function draw() {
       
       textSize(50);
       fill("red");
-      text("GAME OVER",displayWidth/2.5,displayHeight/2);
+      text("GAME OVER",Width/2.5,Height/2);
       fill("orange");
-      text("Score:"+score,displayWidth/2.5,displayHeight/1.75);
+      text("Score:"+score,Width/2.5,Height/1.75);
       
     }
   
   if (gameState==="finished"){
       textSize(50);
       fill("white");
-      text("Congratulations you saved the Princess",displayWidth/4,displayHeight/2 );
-      text("Score:"+score,displayWidth/4,displayHeight/1.75);
+      text("Congratulations you saved the Princess",Width/4,Height/2 );
+      text("Score:"+score,Width/4,Height/1.75);
       }
   
   

@@ -172,13 +172,14 @@ function draw() {
    
 // For shooting you press "space"    
   
-   if(keyDown("SPACE")){
+   if(keyDown("SPACE")|| touches.lenght>0){
       
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
      bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
   
 // the enmy ship is destroyed when a bullet/laser comes in contact with it    
@@ -205,12 +206,14 @@ function draw() {
     e1g.add(enemy1);
     
   }
-  if(keyDown("SPACE")){
+  if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
    if (e1g.isTouching(bulg)){
      e1g.destroyEach(); 
@@ -255,13 +258,15 @@ function draw() {
     enemy2.velocityY=random(2,10);
     e2g.add(enemy2);
   }
-  if(keyDown("SPACE")){
+   if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
-   } 
+     touches = [];
+   }  
  
 // the enmy ship is destroyed when a bullet/laser comes in contact with it    
     if (e1g.isTouching(bulg)){
@@ -322,12 +327,14 @@ function draw() {
     e3g.add(enemy3);
   }
      
-  if(keyDown("SPACE")){
+   if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
   // the enmy ship is destroyed when a bullet/laser comes in contact with it
     if (e1g.isTouching(bulg)){
@@ -401,12 +408,14 @@ function draw() {
     e4g.add(enemy4);
   }
     
-  if(keyDown("SPACE")){
+  if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
       // the enmy ship is destroyed when a bullet/laser comes in contact with it
    if (e1g.isTouching(bulg)){
@@ -486,12 +495,14 @@ function draw() {
     e4g.add(enemy4);
   }
     // In a -- no. of frame ccounts a new a enemy ship will be created. 
-  if(keyDown("SPACE")){
+   if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
      // the enmy ship is destroyed when a bullet/laser comes in contact with it
    if (e1g.isTouching(bulg)){
@@ -528,12 +539,14 @@ function draw() {
     enemy5.y=random(10,1000);
         }
    
-    if(keyDown("SPACE")){           
+    if(keyDown("SPACE")|| touches.lenght>0){
+      
      bullet=createSprite(captain.x,captain.y,10,30);
      bullet.shapeColor="red";
      bullet.velocityY=-10;
-     bullet.play('las1',las);
+     bullet.play();
      bulg.add(bullet);
+     touches = [];
    } 
       if (e5g.isTouching(bulg)){
      e5g.destroyEach(); 
@@ -571,8 +584,8 @@ function draw() {
  }  
      
 /*
- Here i finish my fist game ever.
- Thank you Vidya ma'am and Subashini ma'am
+ Here I finish my fist game ever.
+ Thank you Vidya ma'am and Subashini ma'am.
 */   
   
  

@@ -147,6 +147,7 @@ function draw() {
 // After you read the story you are ready for the game. You press "space"
      if(keyDown("space") || touches.lenght>0){
         gameState="lev1intro";
+      touches=[];
         }
      
   }

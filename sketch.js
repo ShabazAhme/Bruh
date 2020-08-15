@@ -145,7 +145,7 @@ function draw() {
      textSize(35);
      text("'Press Space to Start Game'",displayWidth/1.75,displayHeight-80);
 // After you read the story you are ready for the game. You press "space"
-     if(keyDown("space")){
+     if(keyDown("space") || touches.lenght>0){
         gameState="lev1intro";
         }
      
